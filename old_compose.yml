@@ -1,0 +1,40 @@
+services:
+  frontend:
+    image: python:3.11-bullseye
+    ports:
+      - "443:8043"
+    networks:
+      - front-tier
+      - back-tier
+#    configs:
+#      - httpd-config
+#    secrets:
+#      - server-certificate
+
+  backend:
+    image: postgres:12-bullseye
+#    volumes:
+#      - db-data:/etc/data
+    networks:
+      - back-tier
+    environment:
+      POSTGRES_PASSWORD: example
+
+#volumes:
+#  db-data:
+#    driver: flocker
+#    driver_opts:
+#      size: "10GiB"
+
+configs:
+  httpd-config:
+    external: true
+
+secrets:
+  server-certificate:
+    external: true
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}
+  back-tier: {}
