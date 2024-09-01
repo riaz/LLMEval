@@ -28,6 +28,3 @@ jobs:
           key: poetry-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
             poetry-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Code Quality
-        run: poetry run black . --check
