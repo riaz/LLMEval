@@ -1,0 +1,7 @@
+services:
+  web:
+    build: . # this means use the Dockerfile defined in the same working dir.
+    ports:
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"
