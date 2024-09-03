@@ -91,6 +91,10 @@ services:
     ports:
       - "8000:5000"
       - "7777:7777"
+  web2:
+    build: ./helm2
+    ports:
+      - "8888:8888"
       
   postgres:
     image: postgres:13
