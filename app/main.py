@@ -44,8 +44,8 @@ with st.sidebar:
 # Right panel with DAG runs
 st.header('DAG Runs')
 
-if limit:
-    # Fetch and display DAG runs
-    dag_runs = fetch_dag_runs(limit=limit)
-    st.write(dag_runs)
+#if limit:
+#    # Fetch and display DAG runs
+#    dag_runs = fetch_dag_runs(limit=limit)
+#    st.write(dag_runs)
 
